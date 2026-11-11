@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBER GHOST CBT</title>
+<style>
+:root{--bg:#07111f;--panel:#101f33;--cyan:#31d7e8;--text:#edf6ff;--muted:#9fb2c9}
+*{box-sizing:border-box}body{margin:0;font-family:Arial, sans-serif;background:linear-gradient(135deg,#07111f,#10243a);color:var(--text);min-height:100vh}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #24384e}
+.logo{font-weight:800;letter-spacing:2px;color:var(--cyan);font-size:20px}
+nav a{color:var(--text);text-decoration:none;margin-left:20px;font-size:14px}
+main{max-width:1100px;margin:70px auto;padding:0 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.tag{color:var(--cyan);font-weight:bold;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05;margin:16px 0}
+p{color:var(--muted);line-height:1.7;font-size:16px}
+button{background:var(--cyan);border:0;border-radius:8px;padding:14px 22px;font-weight:bold;color:#06111c;font-size:15px;cursor:pointer;margin-top:14px}
+.card{background:rgba(16,31,51,.94);border:1px solid #29415c;border-radius:18px;padding:28px;box-shadow:0 20px 60px #0005}
+.card h2{margin-top:0}.item{padding:14px 0;border-bottom:1px solid #29415c;color:var(--muted)}.item:last-child{border:0}
+footer{text-align:center;color:#7890aa;padding:35px 15px;font-size:13px}
+@media(max-width:750px){main{grid-template-columns:1fr;margin:40px auto}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="logo">CYBER GHOST CBT</div><nav><a href="#features">Features</a><a href="#about">About</a></nav></header>
+<main>
+<section>
+<div class="tag">SMART • SIMPLE • SECURE</div>
+<h1>Welcome to<br>CYBER GHOST CBT</h1>
+<p>A computer-based testing platform designed to make assessments simple and organized for students, teachers and administrators.</p>
+<button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">Explore platform</button>
+</section>
+<section class="card" id="features">
+<h2>CBT Platform</h2>
+<div class="item">✓ Online examination interface</div>
+<div class="item">✓ Student-friendly experience</div>
+<div class="item">✓ Organized assessments</div>
+<div class="item">✓ Results and progress features</div>
+<p id="about">The platform is being prepared. Account login, exam management and result storage will be connected in the next development stage.</p>
+</section>
+</main>
+<footer>© 2026 CYBER GHOST CBT. All rights reserved.</footer>
+</body>
+</html>
