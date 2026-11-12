@@ -1,9 +1,75 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CYBER GHOST CBT</title><style>
-:root{--bg:#07111f;--panel:#102238;--line:#29445f;--cyan:#35d6e8;--white:#edf6ff;--muted:#a9bdd1}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#06101d,#0d2035);color:var(--white);font-family:Arial,sans-serif}header{padding:18px 5%;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--cyan);letter-spacing:1px}main{max-width:1100px;margin:28px auto;padding:0 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.hidden{display:none!important}.muted{color:var(--muted)}input,textarea{width:100%;padding:12px;margin:6px 0 14px;background:#081827;color:white;border:1px solid var(--line);border-radius:8px}textarea{min-height:160px;font-family:monospace}button{background:var(--cyan);border:0;border-radius:8px;padding:12px 17px;font-weight:bold;cursor:pointer}.secondary{background:#29445f;color:white}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{color:var(--cyan);font-size:12px}.option{display:block;padding:12px;border:1px solid var(--line);border-radius:8px;margin:8px 0}.option input{width:auto;margin:0 8px 0 0}.question{padding:14px 0;border-bottom:1px solid var(--line)}#timer{font-size:24px;color:#ffd36a;font-weight:bold}.stat{font-size:32px;color:var(--cyan);font-weight:bold}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line)}footer{text-align:center;padding:28px;color:#7890aa}@media(max-width:600px){main{margin:12px auto}}</style></head><body>
-<header><div class="brand">👻 CYBER GHOST CBT</div><div class="row"><span id="who" class="muted"></span><button id="logout" class="secondary hidden">Log out</button></div></header><main>
-<section id="welcome"><div class="card"><span class="pill">SMART • SIMPLE • SECURE</span><h1>Online Examination Platform</h1><p class="muted">Student accounts, timed examinations, automatic scoring and teacher administration.</p><div class="grid">
-<form id="signup" class="card"><h2>Register student</h2><label>Full name</label><input id="name" required><label>Email</label><input id="suEmail" type="email" required><label>Password (minimum 6 characters)</label><input id="suPass" type="password" minlength="6" required><button>Create account</button></form>
-<form id="login" class="card"><h2>Sign in</h2><label>Email</label><input id="liEmail" type="email" required><label>Password</label><input id="liPass" type="password" required><button>Sign in</button></form></div><p id="authMsg"></p></div></section>
+:root{--bg:#07111f;--panel:#102238;--line:#29445f;--cyan:#35d6e8;--white:#edf6ff;--muted:#a9bdd1}*{box-sizing:border-box}body{margin:0;background:#050d18;color:var(--white);font-family:Arial,sans-serif}header{padding:18px 5%;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#071321}.brand{font-weight:900;color:var(--cyan);letter-spacing:1px;display:flex;flex-direction:column;gap:4px}.brand small{font-size:12px;font-weight:800;letter-spacing:1.8px;color:#55e5f3;text-transform:uppercase;text-shadow:0 0 12px #35d6e855}main{max-width:1100px;margin:28px auto;padding:0 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.hidden{display:none!important}.muted{color:var(--muted)}input,textarea{width:100%;padding:12px;margin:6px 0 14px;background:#081827;color:white;border:1px solid var(--line);border-radius:8px}textarea{min-height:160px;font-family:monospace}button{background:var(--cyan);border:0;border-radius:8px;padding:12px 17px;font-weight:bold;cursor:pointer}.secondary{background:#29445f;color:white}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{color:var(--cyan);font-size:12px}.option{display:block;padding:12px;border:1px solid var(--line);border-radius:8px;margin:8px 0}.option input{width:auto;margin:0 8px 0 0}.question{padding:14px 0;border-bottom:1px solid var(--line)}#timer{font-size:24px;color:#ffd36a;font-weight:bold}.stat{font-size:32px;color:var(--cyan);font-weight:bold}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line)}footer{text-align:center;padding:28px;color:#7890aa}@media(max-width:600px){main{margin:12px auto}}</style></head><body>
+<header><div class="brand">👻 CYBER GHOST CBT<small>BY ABBAGAJI TIJJANI</small></div><div class="row"><span id="who" class="muted"></span><button id="logout" class="secondary hidden">Log out</button></div></header><main>
+<section id="welcome">
+<style>
+/* CYBER GHOST CBT landing-page visual identity */
+#landing{position:relative;overflow:hidden;border:1px solid #244760;border-radius:25px;background:radial-gradient(circle at 12% 15%,#164c65 0,transparent 34%),radial-gradient(circle at 88% 85%,#263c75 0,transparent 32%),linear-gradient(135deg,#06121f 0%,#0b2035 52%,#101b36 100%);padding:clamp(22px,5vw,54px);box-shadow:0 28px 80px #0008}
+#landing:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom right,#000,transparent 80%);pointer-events:none}
+#landing .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+#landing .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #2d6b83;background:#0d3046;border-radius:30px;color:#70eaff;font-size:11px;font-weight:800;letter-spacing:2px}
+#landing .live-dot{width:7px;height:7px;border-radius:50%;background:#5af0b2;box-shadow:0 0 12px #5af0b2}
+#landing h1{font-size:clamp(39px,6vw,68px);line-height:.98;letter-spacing:-2.5px;margin:23px 0 18px;font-weight:900}
+#landing h1 span{color:#55e5f3;text-shadow:0 0 30px #24b8db55}
+#landing .lead{max-width:520px;font-size:16px;line-height:1.8;color:#b6cadd}
+#landing .creator-credit{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:9px 13px;border:1px solid #36788c;border-radius:8px;background:linear-gradient(90deg,#0c3044,#10253a);color:#bceef5;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;box-shadow:0 0 20px #21c8df18}
+#landing .creator-credit span{color:#55e5f3}
+#landing .feature-row{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0}
+#landing .feature-chip{border:1px solid #294c67;background:#0b1e31bb;color:#d5e7f5;border-radius:8px;padding:8px 11px;font-size:12px}
+#landing .hero-art{position:relative;min-height:310px;display:grid;place-items:center}
+#landing .monitor{width:min(100%,390px);padding:13px;border-radius:17px;background:linear-gradient(145deg,#35536a,#0b1727 55%);border:1px solid #6a8ca0;box-shadow:0 28px 55px #0009,0 0 45px #1bc9e522;transform:perspective(900px) rotateY(-8deg) rotateX(3deg)}
+#landing .screen{background:#071523;border:1px solid #2a6378;border-radius:9px;padding:17px;min-height:220px}
+#landing .screen-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #24445b;padding-bottom:12px;color:#83e9f5;font-size:11px;letter-spacing:1.5px;font-weight:800}
+#landing .screen-dots{display:flex;gap:5px}.screen-dots i{width:6px;height:6px;border-radius:50%;background:#5de6ed}
+#landing .mock-question{font-size:14px;font-weight:700;margin:17px 0 12px;color:#f0f8ff}
+#landing .mock-option{border:1px solid #24445b;border-radius:7px;padding:8px 10px;margin:7px 0;color:#a9c1d4;font-size:11px}
+#landing .mock-option.active{border-color:#4cdeed;background:#10374a;color:#dffcff}
+#landing .mock-option b{color:#54e5f1;margin-right:8px}
+#landing .monitor-neck{width:65px;height:23px;margin:auto;background:linear-gradient(90deg,#172a3c,#526b7b,#172a3c);clip-path:polygon(25% 0,75% 0,88% 100%,12% 100%)}
+#landing .monitor-base{width:135px;height:10px;margin:auto;border-radius:50%;background:linear-gradient(90deg,#162739,#61798a,#162739)}
+#landing .float-card{position:absolute;right:-2px;bottom:15px;background:#0c2639;border:1px solid #31738a;border-radius:12px;padding:12px 15px;box-shadow:0 12px 28px #0007;color:#dffaff;font-size:12px}
+#landing .float-card strong{display:block;color:#58e8f0;font-size:18px;margin-bottom:3px}
+#landing .auth-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:35px}
+#landing .auth-card{background:#091a2acc;border:1px solid #29465e;border-radius:15px;padding:20px;backdrop-filter:blur(8px)}
+#landing .auth-card h2{font-size:19px;margin:0 0 14px}
+#landing label{display:block;color:#a9bfd1;font-size:12px;margin-top:7px}
+#landing input{background:#061522;border:1px solid #2b4a61;color:#f1fbff;border-radius:8px;padding:12px;margin:6px 0 10px}
+#landing input:focus{outline:2px solid #42d8e8;border-color:transparent}
+#landing button{background:linear-gradient(135deg,#55e8f0,#2bb9d7);color:#05202b;border-radius:8px;padding:12px 17px;box-shadow:0 6px 18px #20c6df30}
+#landing .auth-card button{width:100%;margin-top:6px}
+#landing .login-note{font-size:11px;color:#8da8bc;line-height:1.6}
+#landing .bottomline{position:relative;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:23px;padding-top:17px;border-top:1px solid #29465a;color:#7f9ab0;font-size:11px}
+@media(max-width:760px){#landing .hero-grid{grid-template-columns:1fr}#landing .hero-art{min-height:260px;order:-1}#landing .auth-grid{grid-template-columns:1fr}#landing h1{letter-spacing:-1.5px}#landing .float-card{right:0;bottom:2px}}
+</style>
+<div id="landing">
+ <div class="hero-grid">
+  <div>
+   <div class="eyebrow"><span class="live-dot"></span> DIGITAL EXAMINATION ENVIRONMENT</div>
+   <h1>Think sharp.<br><span>Test smarter.</span></h1>
+   <div class="creator-credit">✦ Designed by <span>ABBAGAJI TIJJANI</span></div>
+   <p class="lead">Welcome to CYBER GHOST CBT — a modern computer-based testing platform built for focused learning, secure assessments and clear results.</p>
+   <div class="feature-row"><span class="feature-chip">⌁ Timed examinations</span><span class="feature-chip">✓ Instant results</span><span class="feature-chip">▦ Student dashboard</span></div>
+  </div>
+  <div class="hero-art" aria-label="Illustration of a computer showing an online examination">
+   <div>
+    <div class="monitor"><div class="screen">
+     <div class="screen-top"><span>CYBER GHOST / EXAM TERMINAL</span><span class="screen-dots"><i></i><i></i><i></i></span></div>
+     <div style="color:#6e91a9;font-size:10px;margin-top:13px">QUESTION 01 <span style="float:right;color:#52e4ef">TIME 29:58</span></div>
+     <div class="mock-question">Which technology connects devices in a network?</div>
+     <div class="mock-option active"><b>A</b> Network interface</div><div class="mock-option"><b>B</b> Word processor</div><div class="mock-option"><b>C</b> Spreadsheet</div><div class="mock-option"><b>D</b> Media player</div>
+    </div></div><div class="monitor-neck"></div><div class="monitor-base"></div>
+   </div>
+   <div class="float-card"><strong>CBT MODE: READY</strong>Assessment workspace</div>
+  </div>
+ </div>
+ <div class="auth-grid">
+  <form id="signup" class="auth-card"><h2>Create student account</h2><label>Full name</label><input id="name" required placeholder="Your full name"><label>Email address</label><input id="suEmail" type="email" required placeholder="name@example.com"><label>Password (minimum 6 characters)</label><input id="suPass" type="password" minlength="6" required placeholder="Create a password"><button>Create account →</button></form>
+  <form id="login" class="auth-card"><h2>Welcome back</h2><label>Email address</label><input id="liEmail" type="email" required placeholder="name@example.com"><label>Password</label><input id="liPass" type="password" required placeholder="Enter your password"><button>Sign in →</button><p class="login-note">Sign in to continue to your examination dashboard. Your account and exam records are managed securely through Firebase.</p></form>
+ </div>
+ <div class="bottomline"><span>© 2026 CYBER GHOST CBT</span><span>BY ABBAGAJI TIJJANI</span><span>LEARN • ASSESS • ACHIEVE</span><span>ONLINE EXAMINATION PORTAL</span></div>
+</div>
+<p id="authMsg"></p>
+</section>
 <section id="dashboard" class="hidden"><div class="row"><h1 id="hello">Dashboard</h1><button id="refresh" class="secondary">Refresh</button></div>
 <div id="admin" class="hidden"><div class="card"><h2>Create and publish examination</h2><form id="examForm"><label>Exam title</label><input id="title" required><label>Duration in minutes</label><input id="duration" type="number" min="1" max="300" value="30" required><label>Instructions</label><input id="instructions"><label>Questions JSON (answer is index 0, 1, 2 or 3)</label><textarea id="questions" required></textarea><div class="row"><button type="button" id="example" class="secondary">Load example questions</button><button>Create exam</button></div></form><p id="examMsg"></p></div><div class="card"><h2>All student results</h2><div id="allResults">Loading…</div></div></div>
 <div id="student"><div class="card"><h2>Available examinations</h2><div id="exams">Loading…</div></div><div class="card"><h2>My results</h2><div id="myResults">Loading…</div></div></div></section>
